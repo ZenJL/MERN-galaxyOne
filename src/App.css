@@ -1,38 +1,589 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* main: #74b9ff */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
 .App {
+  height: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.flexHeader {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.flexHeader .logo {
+  font-size: 36px;
+  font-weight: 700;
+  margin-right: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+.flexHeader .logo h1 {
+  margin: 0;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+
+.flexHeader ul {
+  background: #f0f2f5;
+  display: flex;
+  align-items: center;
+}
+
+/* disable default ant */
+.flexHeader ul::before,
+.flexHeader ul::after {
+  display: none;
+}
+
+.flexHeader ul li {
+  flex-grow: 1;
+  align-items: center;
+}
+
+.ant-layout-header {
+  background: #f0f2f5;
+}
+
+.ant-layout-content {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.topMenu {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.filmMenu {
+  display: flex;
+  justify-items: flex-start;
+}
+
+.userMenu {
+  display: flex;
+  justify-items: flex-start;
+}
+
+.ant-carousel .slick-dots li button {
+  height: 10px;
+  background-color: #f23b26;
+}
+
+.ant-space-vertical {
+  justify-content: space-between;
+  height: 100%;
+}
+
+.ant-space-item:nth-child(2) {
+  flex: 1;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.mainContainer {
+  padding: 0 50px;
+  height: 100%;
+}
+
+.site-layout-content {
+  height: 100%;
+}
+
+.registerWrap {
+  margin-top: 40px;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 50 0px;
+  padding: 0 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heading p {
+  color: #74b9ff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form {
+  width: 70%;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.form-group label {
+  text-align: left;
+  display: block;
+  margin: 0 0 5px 3px;
+}
+
+.form {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.form-group label {
+  text-align: left;
+  display: block;
+  margin: 0 0 5px 3px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid #74b9ff;
+  border-radius: 5px;
+  background: #74b9ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn svg {
+  margin-right: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
+.btn-reverse {
+  background: #fff;
+  color: #000;
+}
+
+.btn-block {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn-sm {
+  padding: 5px 15px;
+  font-size: 13px;
+}
+
+.btn-danger {
+  background: darkred;
+  border: none;
+}
+
+.btn-back {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.wrapBtnBack {
+  margin-top: 30px;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+  color: #000;
+}
+
+/* for the spinner loading */
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #00cc66 transparent #00cc66 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+
+  100% {
     transform: rotate(360deg);
   }
+}
+
+.searchFilmForm {
+  width: 50%;
+  margin-top: 30px;
+}
+
+.searchFilmHeading {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 6px 0;
+}
+
+.wrapForm-Btn {
+  display: flex;
+  column-gap: 50px;
+  align-content: center;
+}
+
+.wrapForm-Btn form {
+  flex: 1;
+}
+
+.btn-clear {
+  align-self: center;
+}
+
+.datePicker-control {
+  display: flex;
+  align-items: center;
+}
+
+.dataPickerLabel {
+  flex: 0 0 30%;
+}
+
+.datePickerFilm {
+  flex: 1;
+}
+
+.filmListHeading {
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.groupFilmHeading {
+  flex: 1;
+  border-bottom: 1px solid #00cc66;
+  display: flex;
+  position: relative;
+}
+
+.groupFilmHeading button.active {
+  color: #f23b26;
+}
+
+.btnFilmList {
+  background: none;
+  border: none;
+  color: #000;
+  border-radius: 0;
+  flex-basis: 30%;
+}
+
+.btnFilmList:hover {
+  transform: none;
+  color: #f23b26;
+}
+
+.horizonLineShowing {
+  height: 2px;
+  width: 30%;
+  background-color: #f23b26;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+}
+
+.horizonLine2 {
+  height: 2px;
+  width: 30%;
+  background-color: #f23b26;
+  position: absolute;
+  bottom: -1px;
+  left: 30%;
+}
+
+.filmList {
+  --spacing: 30px;
+  --colums: 3;
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--spacing);
+  margin-left: calc(-1 * calc(var(--spacing) / 2));
+}
+
+.filmItem {
+  margin-left: var(--spacing);
+  width: calc(calc(100% / var(--colums)) - var(--spacing));
+}
+
+.userList {
+  --spacing: 30px;
+  --colums: 3;
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--spacing);
+  margin-left: calc(-1 * calc(var(--spacing) / 2));
+}
+
+.userItem {
+  margin-left: var(--spacing);
+  width: calc(calc(100% / var(--colums)) - var(--spacing));
+}
+
+.card {
+  background-color: #fff;
+  color: #333;
+  border-radius: 15px;
+  flex: 0 0 calc(100% / var(--colums));
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  position: relative;
+}
+
+.card .filmBanner {
+  cursor: pointer;
+  height: 350px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.cardContent {
+  padding: 20px;
+  flex: 1;
+}
+
+.card .bannerTitleEn {
+  font-weight: 700;
+  margin: 0;
+}
+
+.card .bannerTitleVi {
+  font-weight: 400;
+  margin: 0;
+}
+
+.card .bannerTitleEn,
+.card .bannerTitleVi {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.heroContent {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.displayHeroContent {
+  max-width: 512px;
+}
+
+.heroContentHeading {
+  font-weight: 800;
+  font-size: 64px;
+  margin-bottom: 8px;
+}
+
+.heroContentDesc {
+  margin-bottom: 8px;
+  font-size: 32px;
+}
+
+.userContent {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.currentUser {
+  justify-self: flex-end;
+  max-width: 440px;
+  margin: 30px 0 70px;
+  align-self: flex-start;
+}
+
+.currentUser p.heading {
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.userCurTitle {
+  display: block;
+  color: #000;
+  font-weight: 500;
+}
+
+.viewUserCur {
+  color: #000;
+  opacity: 0.4;
+}
+
+.card .warpAvatar {
+  display: inline-flex;
+}
+
+.card .avatarUser {
+  background-color: #00cc66;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.card .avatarUser .avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userInfo {
+  padding-left: 30px;
+}
+
+.shortUserDesc {
+  padding-left: 30px;
+}
+
+.btn-disable {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.btn-disable:hover {
+  cursor: default;
+  opacity: 0.5;
+  color: #fff;
+  transform: none;
+}
+
+.btnEdit {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  height: 20px;
+  width: 64px;
+  font-size: 14px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #74b9ff;
+  border-radius: 5px;
+  background: #74b9ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btnEdit:hover {
+  transform: scale(0.98);
+  color: #000;
 }
