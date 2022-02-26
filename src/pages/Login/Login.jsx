@@ -4,10 +4,10 @@ import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 //// context
-import { useGalaxyFilmContext } from '../../context/galaxyFilmContext';
+import { useGalaxyFilmContext } from 'context/galaxyFilmContext';
 
 //// actions
-import { login, getUsers } from '../../reducer/galaxyFilmActions';
+import { login, getUsers } from 'reducer/galaxyFilmActions';
 
 function Login() {
   const { users, user, loading, dispatch } = useGalaxyFilmContext();
@@ -34,26 +34,26 @@ function Login() {
     if (email === '' || password === '') {
       toast.error('Email and password could not be empty');
       return;
-    } else {
-      const loginData = {
-        email,
-        password,
-      };
+    } 
+    
+    const loginData = {
+      email,
+      password,
+    };
 
-      try {
-        dispatch({ type: 'SET_LOADING' });
-        const resultLogin = await login(loginData);
-        dispatch({ type: 'OFF_LOADING' });
-        console.log('result login: ', resultLogin);
-        localStorage.setItem('token', resultLogin.token);
-        toast.success(resultLogin.msg);
-        setTimeout(() => {
-          history.push('/');
-        }, 2000);
-      } catch (error) {
-        console.log('login err: ', error);
-        toast.error('something went wrong ...');
-      }
+    try {
+      dispatch({ type: 'SET_LOADING' });
+      const resultLogin = await login(loginData);
+      dispatch({ type: 'OFF_LOADING' });
+      console.log('result login: ', resultLogin);
+      localStorage.setItem('token', resultLogin.token);
+      toast.success(resultLogin.msg);
+      setTimeout(() => {
+        history.push('/');
+      }, 2000);
+    } catch (error) {
+      console.log('login err: ', error);
+      toast.error('something went wrong ...');
     }
   };
 

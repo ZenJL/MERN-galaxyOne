@@ -9,8 +9,8 @@ import { Layout } from 'antd';
 
 //// Components
 import Dashboard from '../components/Dashboard';
-import Login from '../components/user/Login';
-import Register from '../components/user/Register';
+import Login from 'pages/Login';
+import Register from 'pages/Register';
 import NotFoundPage from '../components/NotFoundPage';
 import UserList from '../components/user/UserList';
 import Profile from '../components/user/Profile';

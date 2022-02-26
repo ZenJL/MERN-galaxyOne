@@ -4,13 +4,13 @@ import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 
 //// context
-import { useGalaxyFilmContext } from '../../context/galaxyFilmContext';
+import { useGalaxyFilmContext } from 'context/galaxyFilmContext';
 
 //// actions
-import { register, getUsers } from '../../reducer/galaxyFilmActions';
+import { register, getUsers } from 'reducer/galaxyFilmActions';
 
 // cpns
-import Spinner from '../Spinner';
+// import Spinner from '../Spinner';
 
 function Register() {
   const { users, loading, dispatch } = useGalaxyFilmContext();

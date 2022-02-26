@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-function LogoApp() {
+function LogoApp({ text = 'Galaxy One'}) {
   return (
     <>
       <Link to='/' className='logo'>
-        <h1>Galaxy One</h1>
+        <h1>{text}</h1>
       </Link>
     </>
   );
