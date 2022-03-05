@@ -9,9 +9,9 @@ import { useGalaxyFilmContext } from '../../context/galaxyFilmContext';
 import { getUsers } from '../../reducer/galaxyFilmActions';
 
 //// COmponents
-import Spinner from '../Spinner';
-import Card from '../Card';
-import UserItem from './UserItem';
+import Spinner from '../../components/Spinner';
+import Card from '../../components/Card';
+import UserItem from '../../components/user/UserItem';
 
 function UserList() {
   const { users, loading, dispatch } = useGalaxyFilmContext();
@@ -34,7 +34,7 @@ function UserList() {
     <>
       <div className='mainContainer'>
         <div className='container'>
-          <Link to='/' className='btn btn-back wrapBtnBack'>
+          <Link to='/api/films' className='btn btn-back wrapBtnBack'>
             To Home
           </Link>
 

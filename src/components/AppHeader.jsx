@@ -18,24 +18,25 @@ function AppHeader() {
           className='topMenu'
         >
           <div className='filmMenu'>
-            <Link to={'/'}>
+            <Link to={'/api/films'}>
               <Menu.Item key='home'>Home</Menu.Item>
             </Link>
-            <Link to='/films'>
-              <Menu.Item key='film'>Add New Film</Menu.Item>
+            <Link to='/api/films/create-film'>
+              <Menu.Item key='addFilm'>Add New Film</Menu.Item>
             </Link>
           </div>
+
           <div className='userMenu'>
-            <Link to='/login'>
-              <Menu.Item key='register'>Login</Menu.Item>
+            <Link to='/api/users/login'>
+              <Menu.Item key='login'>Login</Menu.Item>
             </Link>
-            <Link to='/register'>
+            <Link to='/api/users/register'>
               <Menu.Item key='register'>Register</Menu.Item>
             </Link>
-            <Link to='/users'>
+            <Link to='/api/users'>
               <Menu.Item key='users'>Members List</Menu.Item>
             </Link>
-            <Link to='/users/:id'>
+            <Link to='/api/users/'>
               <Menu.Item key='profile' style={{ paddingRight: 0 }}>
                 User Profile
               </Menu.Item>

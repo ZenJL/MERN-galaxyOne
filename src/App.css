@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
 
 /* main: #74b9ff */
 
@@ -11,7 +11,7 @@ body {
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   box-sizing: border-box;
 }
@@ -129,8 +129,20 @@ a {
 }
 
 .ant-carousel .slick-dots li button {
-  height: 10px;
-  background-color: #f23b26;
+  height: 20px;
+  background-color: #e100ff;
+}
+
+.ant-carousel .slick-dots li {
+  width: 20px;
+}
+
+.ant-carousel .slick-dots li.slick-active {
+  width: 28px;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background-color: #00cc66;
 }
 
 .ant-space-vertical {
@@ -168,6 +180,7 @@ a {
 
 .heading p {
   color: #74b9ff;
+  /* color: #0f7fff; */
 }
 
 .form {
@@ -307,6 +320,34 @@ a {
   }
 }
 
+.sliderBlock {
+  width: 100%;
+  min-width: 1366px;
+}
+
+/* .sliderBgImg {
+  --heightBgImg: 600px;
+  height: var(--heightBgImg);
+  color: #000;
+  line-height: var(--heightBgImg);
+  background-size: cover;
+  position: relative;
+} */
+
+.titleTooltipSlider {
+  position: absolute;
+  background-color: rgba(109, 109, 109, 0.856);
+  max-width: 400px;
+  min-width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 10%;
+  bottom: 7%;
+  padding: 5px 10px;
+}
+
 .searchFilmForm {
   width: 50%;
   margin-top: 30px;
@@ -325,7 +366,8 @@ a {
 }
 
 .wrapForm-Btn form {
-  flex: 1;
+  flex-shrink: 0;
+  flex-basis: 80%;
 }
 
 .btn-clear {
@@ -433,6 +475,8 @@ a {
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .card .filmBanner {
@@ -441,6 +485,7 @@ a {
   width: 100%;
   flex-shrink: 0;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .cardContent {
@@ -462,7 +507,7 @@ a {
 .card .bannerTitleVi {
   display: -webkit-box;
   max-width: 100%;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -587,4 +632,11 @@ a {
 .btnEdit:hover {
   transform: scale(0.98);
   color: #000;
+}
+
+.infiniteSpinnerContainer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

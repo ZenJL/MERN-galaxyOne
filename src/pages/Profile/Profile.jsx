@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import jwt from 'jwt-decode';
 
 //// Context
 import { useGalaxyFilmContext } from '../../context/galaxyFilmContext';
@@ -9,8 +8,8 @@ import { useGalaxyFilmContext } from '../../context/galaxyFilmContext';
 import { getUser } from '../../reducer/galaxyFilmActions';
 
 //// COmponents
-import Card from '../Card';
-import Spinner from '../Spinner';
+import Card from '../../components/Card';
+import Spinner from '../../components/Spinner';
 
 function Profile() {
   const { user, loading, dispatch } = useGalaxyFilmContext();
@@ -31,17 +30,22 @@ function Profile() {
   const [isUpdate, setIsUpdate] = useState(false);
 
   const token = localStorage.getItem('token');
-  const userDecode = jwt(token);
-  // console.log('userDecode: ', userDecode);
-  const userFromToken = userDecode.user;
-  // console.log('userFromToken: ', userFromToken);
+
+  useEffect(() => {
+    const getCurrUser = async () => {
+      const user = await getUser();
+    };
+
+    getCurrUser();
+    dispatch({ type: 'GET_USER' });
+  }, []);
 
   const params = useParams();
 
   useEffect(() => {
     dispatch({ type: 'SET_LOADING' });
     const getUserProfile = async () => {
-      const userData = await getUser(userFromToken.id);
+      const userData = await getUser(token);
       dispatch({ type: 'GET_USER', payload: userData });
       // setFormData((prevState) => ({
       //   ...prevState,
@@ -93,7 +97,7 @@ function Profile() {
                 </div>
                 <div className='userInfo'>
                   <p className='userCurTitle'>
-                    {`${user.firstName} ${user.lastName}`}
+                    {/* {`${user.firstName} ${user.lastName}`} */}
                   </p>
                 </div>
               </div>

@@ -5,7 +5,7 @@ const EXPRESS_API = process.env.REACT_APP_EXPRESS_API_URL;
 
 //// register user
 export const register = async (userData) => {
-  const res = await axios.post(`${EXPRESS_API}/api/user/register`, userData);
+  const res = await axios.post(`${EXPRESS_API}/users/register`, userData);
 
   // console.log('register: ', res.data);
   return res.data;
@@ -13,16 +13,16 @@ export const register = async (userData) => {
 
 //// register user
 export const login = async (userData) => {
-  const res = await axios.post(`${EXPRESS_API}/api/user/login`, userData);
+  const res = await axios.post(`${EXPRESS_API}/users/login`, userData);
 
-  // console.log('login: ', res.data);
+  console.log('login: ', res.data);
   return res.data;
 };
 
 //// display in member
 //// get all users
 export const getUsers = async () => {
-  const res = await axios.get(`${EXPRESS_API}/api/user`);
+  const res = await axios.get(`${EXPRESS_API}/users`);
   console.log(res.data.data);
 
   return res.data.data;
@@ -30,7 +30,7 @@ export const getUsers = async () => {
 
 //// get single user
 export const getUser = async (userId) => {
-  const res = await axios.get(`${EXPRESS_API}/api/user/${userId}`);
+  const res = await axios.get(`${EXPRESS_API}/users/${userId}`);
   console.log(res.data.data);
   if (res.status === 404) {
     window.location = '/notfound';
@@ -41,7 +41,7 @@ export const getUser = async (userId) => {
 
 //// update user
 export const updateUser = async (userId, token, updateData) => {
-  const res = await axios.put(`${EXPRESS_API}/api/user/${userId}`, updateData, {
+  const res = await axios.put(`${EXPRESS_API}/users/${userId}`, updateData, {
     headers: {
       'x-auth-token': token,
     },
@@ -52,7 +52,7 @@ export const updateUser = async (userId, token, updateData) => {
 
 //// delete user
 export const deleteUser = async (userId, token) => {
-  const res = await axios.delete(`${EXPRESS_API}/api/user/${userId}`, {
+  const res = await axios.delete(`${EXPRESS_API}/users/${userId}`, {
     headers: {
       'x-auth-token': token,
     },
@@ -62,7 +62,7 @@ export const deleteUser = async (userId, token) => {
 };
 
 export const getFilms = async () => {
-  const res = await axios.get(`${EXPRESS_API}/api/film`);
+  const res = await axios.get(`${EXPRESS_API}/films`);
   // console.log(res.data.data);
   // setUsers(res.data.data);
   // setLoading(false);
@@ -71,7 +71,7 @@ export const getFilms = async () => {
 
 //// get single film
 export const getFilm = async (filmId) => {
-  const res = await axios.get(`${EXPRESS_API}/api/film/${filmId}`);
+  const res = await axios.get(`${EXPRESS_API}/films/${filmId}`);
   console.log(res.data.data);
 
   return res.data.data;
@@ -79,7 +79,7 @@ export const getFilm = async (filmId) => {
 
 //// create film
 export const createFilm = async (filmData, token) => {
-  const res = await axios.post(`${EXPRESS_API}/api/film`, filmData, {
+  const res = await axios.post(`${EXPRESS_API}/films`, filmData, {
     headers: {
       'x-auth-token': token,
     },

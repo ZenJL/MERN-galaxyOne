@@ -4,13 +4,12 @@ import { useState } from 'react';
 import { useGalaxyFilmContext } from '../../context/galaxyFilmContext';
 
 //// Components
-import Card from '../Card';
 import FilmItem from './FilmItem';
 
-function FilmList({ films }) {
+function FilmList() {
   const [nowShowing, setNowShowing] = useState(true);
 
-  // const { films } = useGalaxyFilmContext();
+  const { films, filteredFilms } = useGalaxyFilmContext();
 
   return (
     <>
@@ -36,9 +35,13 @@ function FilmList({ films }) {
         </div>
       </div>
       <div className='filmList'>
-        {films.map((film) => (
+        {filteredFilms && filteredFilms.length > 0
+          ? filteredFilms.map((film) => <FilmItem key={film._id} film={film} />)
+          : films.map((film) => <FilmItem key={film._id} film={film} />)}
+
+        {/* {films.map((film) => (
           <FilmItem key={film._id} film={film} />
-        ))}
+        ))} */}
       </div>
     </>
   );

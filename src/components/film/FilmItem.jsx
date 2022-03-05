@@ -2,22 +2,21 @@ import { Link } from 'react-router-dom';
 
 //// COmponents
 import Card from '../Card';
-import FilmDetails from './FilmDetails';
 
 function FilmItem({ film }) {
   const {
     titleEn,
     titleVi,
-    type,
-    country,
-    releaseDate,
-    producer,
-    director,
-    poster,
+    // type,
+    // country,
+    // releaseDate,
+    // producer,
+    // director,
+    // poster,
     banner,
-    description,
-    createdDate,
-    actor,
+    // description,
+    // createdDate,
+    // actor,
   } = film;
   return (
     <>

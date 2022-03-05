@@ -34,8 +34,8 @@ function Login() {
     if (email === '' || password === '') {
       toast.error('Email and password could not be empty');
       return;
-    } 
-    
+    }
+
     const loginData = {
       email,
       password,
@@ -49,7 +49,7 @@ function Login() {
       localStorage.setItem('token', resultLogin.token);
       toast.success(resultLogin.msg);
       setTimeout(() => {
-        history.push('/');
+        history.push('/api/films');
       }, 2000);
     } catch (error) {
       console.log('login err: ', error);
